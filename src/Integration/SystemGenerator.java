@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 
 //This class is used to create the external accountingsystem and inventorysystem.
 //It has methods used to return the sytems

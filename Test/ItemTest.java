@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import Integration.Item;
-import Integration.ItemDTO;
+import src.Integration.Item;
+import src.Integration.ItemDTO;
 
 
 public class ItemTest {

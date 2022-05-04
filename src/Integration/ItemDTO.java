@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 
 
 public class ItemDTO {

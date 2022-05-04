@@ -1,5 +1,5 @@
-package Integration;
-import Model.Sale;
+package src.Integration;
+import src.Model.Sale;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

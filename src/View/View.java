@@ -1,5 +1,5 @@
-package View;
-import Controller.Controller;
+package src.View;
+import src.Controller.Controller;
 
 //The vie wis the class that interacts with the controller, a dummy hard coded program is used.
 public class View {

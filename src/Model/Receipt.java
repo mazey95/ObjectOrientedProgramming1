@@ -1,4 +1,4 @@
-package Model;
+package src.Model;
 
 //This class creates the receipt that the printer will print using information from payment and sale
 public class Receipt {

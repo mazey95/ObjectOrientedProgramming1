@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 import java.util.HashMap;
 
 //This class is responsible for keeping track off the the ID of the customers and the discount they are entitled to.

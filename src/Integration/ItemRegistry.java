@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 import java.util.HashMap;
 
 //The is a dummy item database

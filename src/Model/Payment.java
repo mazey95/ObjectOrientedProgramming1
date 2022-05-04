@@ -1,4 +1,4 @@
-package Model;
+package src.Model;
 
 //this class handles the payment and what change should be returned
 public class Payment {

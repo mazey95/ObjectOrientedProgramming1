@@ -1,5 +1,5 @@
-package Integration;
-import Model.Sale;
+package src.Integration;
+import src.Model.Sale;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 

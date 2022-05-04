@@ -1,8 +1,8 @@
-package Startup;
+package src.Startup;
 
-import Controller.Controller;
-import Integration.Printer;
-import View.View;
+import src.Controller.Controller;
+import src.Integration.Printer;
+import src.View.View;
 
 
 /*  

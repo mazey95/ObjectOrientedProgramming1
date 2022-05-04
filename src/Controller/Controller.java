@@ -1,9 +1,9 @@
-package Controller;
-import Integration.*;
-import Model.Register;
-import Model.Payment;
-import Model.Receipt;
-import Model.Sale;
+package src.Controller;
+import src.Integration.*;
+import src.Model.Register;
+import src.Model.Payment;
+import src.Model.Receipt;
+import src.Model.Sale;
 
 //This is the controller class which starts a lot of systems and also handles the interaction
 //From the view to the system

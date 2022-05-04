@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 
 //The class item has the items description, identifier and the quantity.
 

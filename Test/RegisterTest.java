@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import Model.Payment;
-import Model.Register;
+import src.Model.Payment;
+import src.Model.Register;
 
 
 public class RegisterTest {

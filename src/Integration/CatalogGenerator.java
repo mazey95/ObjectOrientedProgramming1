@@ -1,4 +1,4 @@
-package Integration;
+package src.Integration;
 
 //Catalaloggenerator is used to create the itemcatalaog and the dicountregistry
 //There are also methods to retrieve the item registry and discountregistry

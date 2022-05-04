@@ -1,4 +1,4 @@
-package Model;
+package src.Model;
 
 //The regiser class is responsible for keeping track of the balance stores in the register
 public class Register {
