@@ -30,4 +30,19 @@ public class ItemDTO {
     public String toString() {          //A toString function that just returns the itemnName
         return this.itemName;
     }
+
+
+    
+   @Override
+    public boolean equals(Object obj){
+        if (obj instanceof ItemDTO){
+            //ItemDTO item = (ItemDTO)obj;
+            return this.itemName.equals(((ItemDTO) obj).getItemName()) && this.itemPrice==((ItemDTO) obj).getPrice() && this.itemTaxAmount==((ItemDTO) obj).getTaxAmount();
+        }
+        return false;
+    }   
+    
+    //obj.itemName.equals(this.itemName) && obj.itemTaxAmount==this.itemTaxAmount && obj.itemPrice==this.itemPrice
+
+
 }

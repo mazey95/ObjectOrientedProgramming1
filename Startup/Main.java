@@ -1,6 +1,5 @@
 package Startup;
 
-// Imports the classes we need in order to startup the systems
 import Controller.Controller;
 import Integration.Printer;
 import View.View;

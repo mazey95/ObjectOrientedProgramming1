@@ -6,7 +6,7 @@ public class DiscountRegistry {
     private HashMap<String, Double> storedDiscounts = new HashMap<>(); //Create hashmap to store ID's and discount.
     private final double STANDARD_PRICE = 1.0; //The discount rate which equals original price if they are not in the database
 
-    DiscountRegistry(){ 
+    public DiscountRegistry(){ 
         storedDiscounts.put(new String("1234567890"),0.1);  //Customerdata 1
         storedDiscounts.put(new String("0987654321"),0.2);  //Customerdata 2
         storedDiscounts.put(new String("1325476980"),0.3);  //Customerdata 3
