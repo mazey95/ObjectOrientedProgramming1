@@ -1,2 +1,2 @@
-Time of purschase: 19:59:22.401519900 | Total of all pruchases: 346.5
-Time of purschase: 19:59:22.409498500 | Total of all pruchases: 855.0
+Time of purchase: 20:03:09.386653400 | Total of all purchases: 346.5
+Time of purchase: 20:03:09.394628500 | Total of all purchases: 855.0
