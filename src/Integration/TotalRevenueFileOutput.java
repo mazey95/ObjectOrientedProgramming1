@@ -29,6 +29,6 @@ public class TotalRevenueFileOutput implements RegisterPaymentObserver {
     @Override
     public void updateTotal(double total) {
         totalRevenue += total;
-        printWriter.println("Time of purschase: " + LocalTime.now() +" | Total of all pruchases: " + totalRevenue);
+        printWriter.println("Time of purchase: " + LocalTime.now() +" | Total of all purchases: " + totalRevenue);
     }
 }
