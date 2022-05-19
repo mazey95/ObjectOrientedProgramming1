@@ -14,16 +14,28 @@ public class ItemRegistry {
     }
 
     //Checks if item exists in database
-    public boolean checkForItem(String itemIdentifier){
+    public boolean checkForItem(String itemIdentifier)
+    throws InvalidItemIdentifierException
+    {
+        if(!itemBasket.containsKey(itemIdentifier)){
+            throw new InvalidItemIdentifierException(itemIdentifier);           
+        };
         return itemBasket.containsKey(itemIdentifier);
     }
 
     //gets the items information
-    public Item getItem(String itemIdentifier, int quantity){
-        if (checkForItem(itemIdentifier)){
-            return new Item(itemBasket.get(itemIdentifier), itemIdentifier, quantity);
+    public Item getItem(String itemIdentifier, int quantity) 
+    throws InvalidItemIdentifierException
+    {
+        if (!checkForItem(itemIdentifier)){
+            throw new InvalidItemIdentifierException(itemIdentifier);
         }
-        return null;
+
+        if (itemIdentifier.equals("Pringles")){
+            throw new ItemRegistryException("Database is unreachable at the moment");
+        }
+
+        return new Item(itemBasket.get(itemIdentifier), itemIdentifier, quantity);
     }
 
 }

@@ -1,9 +1,15 @@
 package src.Controller;
+import java.util.ArrayList;
+import java.util.List;
+
 import src.Integration.*;
 import src.Model.Register;
+import src.Model.RegisterPaymentObserver;
 import src.Model.Payment;
 import src.Model.Receipt;
 import src.Model.Sale;
+
+
 
 //This is the controller class which starts a lot of systems and also handles the interaction
 //From the view to the system
@@ -15,6 +21,9 @@ public class Controller {
     private Printer printer;
     private Register register;
     private Sale sale;
+    private List<RegisterPaymentObserver> registerPaymentObservers = new ArrayList<>();
+    private TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
+
 
     //The constructor
     public Controller(Printer printer){
@@ -33,13 +42,19 @@ public class Controller {
         this.sale = new Sale();
     }
 
-    //Scans an item and checks if the identifier exists before adding it.
-    public String scanItem(String itemIdentifier, int itemQuantity){
-        if (itemRegistry.checkForItem(itemIdentifier)){
-            Item item = itemRegistry.getItem(itemIdentifier, itemQuantity);
-            return sale.updateSale(item) + ", quantity: " + itemQuantity +
+    /**
+     * This method scan item and in the same process checks if its valid before updating the other methods such as the sale.
+     * @param itemIdentifier is checked if it is valid
+     * @throws ItemRegistryException if item registry is unavailable, in this case it is when it is a hardcoded itemidentifier
+     * @throws InvalidItemIdentifierException if the itemidentifier is not in the itemregistry
+     */
+    public String scanItem(String itemIdentifier, int itemQuantity) 
+    throws ItemRegistryException, InvalidItemIdentifierException{
+            if (itemRegistry.checkForItem(itemIdentifier)){
+                Item item = itemRegistry.getItem(itemIdentifier, itemQuantity);
+                return sale.updateSale(item) + ", quantity: " + itemQuantity +
                     "\nRunning total: " + showTotal();
-        }
+            }
         return "\nRunning total: " + showTotal();
     }
 
@@ -64,12 +79,20 @@ public class Controller {
     //Makes the payment and ends sale
     public String makePayment(double paidAmount){
         Payment payment = new Payment(paidAmount, sale.getTotal());
+        //System.out.println("dachri");
+        payment.addPaymentObservers(registerPaymentObservers);
+        payment.setTotalRevenueFileOutput(totalRevenueFileOutput);  //
         register.updateRegisterBalance(payment);
         externalAccountingSystem.updateAccounting(sale);
         externalInventorySystem.changeInventoryLog(sale);
         Receipt receipt = new Receipt(sale, payment);
         printer.printTheReceipt(receipt);
         sale = null;
-        return "\n \n \nChange: " + payment.getChangeAmount();
+        //System.out.println("\n\ndachri");
+        return "\n***Display to cashier*** \nChange: " + payment.getChangeAmount();
+    }
+
+    public void addRegisterPaymentObserver(RegisterPaymentObserver registerPaymentObserver){
+        registerPaymentObservers.add(registerPaymentObserver);
     }
 }

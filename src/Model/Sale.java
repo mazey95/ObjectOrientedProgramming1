@@ -7,7 +7,18 @@ public class Sale {
     private double total;
     private double amountOfTaxTotal;
     private int itemAmount;
+    //private Payment salePayment;
     private HashMap<String, Item> items = new HashMap<>();
+
+    /*
+    public Payment getSalePayment(){
+        return salePayment;
+    }
+
+    public void updateSalePayment(Payment updatedPayment){
+        this.salePayment=updatedPayment;
+    }
+    */
 
     //The constructor
     public Sale(){

@@ -18,5 +18,5 @@ public class Register {
     public void updateRegisterBalance(Payment payment){
         registerBalance = registerBalance+payment.getTotalAmount();
     }
-    
+
 }

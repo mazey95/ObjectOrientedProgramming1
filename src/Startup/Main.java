@@ -1,6 +1,8 @@
 package src.Startup;
 
 import src.Controller.Controller;
+import src.Integration.InvalidItemIdentifierException;
+import src.Integration.ItemRegistryException;
 import src.Integration.Printer;
 import src.View.View;
 
@@ -11,7 +13,7 @@ import src.View.View;
 */
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ItemRegistryException, InvalidItemIdentifierException {
         Printer printer = new Printer();            //Created new printer
         Controller controller = new Controller(printer); //Creates new controller
         View view = new View(controller);       //Creates new view
